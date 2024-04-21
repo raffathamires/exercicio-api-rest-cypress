@@ -8,6 +8,11 @@ pipeline {
                 bat 'npm install'
             }
         }
+	stage('Subindo Serverest') {
+            steps {
+                bat 'npx serverest'
+            }
+        }
         stage('Test') {
             steps {
 				bat '''set NO_COLOR=1
