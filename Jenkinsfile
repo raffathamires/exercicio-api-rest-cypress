@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-    stages {
+	stages {
         stage('Setup') {
             steps {
                 git branch: 'main', url: 'https://github.com/raffathamires/exercicio-api-rest-cypress.git'
@@ -11,7 +11,7 @@ pipeline {
         stage('Test') {
             steps {
 		bat '''set NO_COLOR=1
-		npm run cypress:run'''
+		npm run cypress:ci'''
             }
         }
     }
